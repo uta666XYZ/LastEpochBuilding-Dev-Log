@@ -1,5 +1,20 @@
 ## Dev Log
 
+## 2026-03-29
+
+- Fixed affix ID decoding in character import
+- RARE items now display generated names based on affixes
+- Fixed altar implicits not being applied correctly
+
+## 2026-03-28
+
+- Improved character import: blessing data updated to match Season 4
+- Verified and fixed skill tree node data for all 127 skills against Season 4 (v1.4) — applied 160 corrections
+
+## 2026-03-26
+
+- Implemented S4 Idol Altar system with dynamic grid layouts
+
 ## 2026-03-25
 
 - Implemented Idol Altar layout

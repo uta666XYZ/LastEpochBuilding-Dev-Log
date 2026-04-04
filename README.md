@@ -1,5 +1,17 @@
 ## Dev Log
 
+## 2026-04-04
+
+- **Skills Tab Phase 3 UI** (complete, merged to dev):
+  - reqPoints prerequisite gating fully fixed: `PassiveSpec.lua` was reading `node.reqFromParent` (never populated); corrected to `node.reqPointsMap` built by `PassiveTree.lua`
+  - Dealloc blocked when removing a point would violate a linked node's reqPoints gate (e.g. cannot reduce Jolting Strikes below 2 while Tempest Weapon is allocated)
+  - All 5 skill slots auto-reset when the player changes class (detected via `curClassId` diff in `SkillsTab:Draw`)
+  - Dynamic damage type conversion per skill tree: last-wins per `fromType`; `MULTI_CONV_TREES` whitelist for skills like Explosive Trap that allow multiple simultaneous conversions
+  - Clicking an empty spec slot now opens the skill selection overview instead of doing nothing
+  - Fixed stack overflow in `CalcTriggers.lua`: placeholder cache entry prevents re-entrant recursion through cast-on-hit → buildActiveSkill → initEnv → triggers → cast-on-hit loop
+  - Skill name + UNSPENT POINTS info bar drawn at layer 145 (above skill background art at layer 15 and tree nodes at 25); spec slots drawn at layer 150
+  - "X UNSPENT POINTS" font size increased to 14; alloc/max point text restored on skill tree nodes
+
 ## 2026-04-03
 
 - **New Passive Tree UI** (complete, merged to dev):
